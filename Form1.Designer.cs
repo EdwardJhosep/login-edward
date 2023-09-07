@@ -30,20 +30,22 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            pictureBox1 = new PictureBox();
+            button2 = new Button();
             button1 = new Button();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            button2 = new Button();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Snap ITC", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(310, 9);
+            label1.Location = new Point(299, 82);
             label1.Name = "label1";
             label1.Size = new Size(148, 42);
             label1.TabIndex = 0;
@@ -52,25 +54,49 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Stencil", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(176, 77);
+            groupBox1.Location = new Point(99, 23);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(442, 271);
+            groupBox1.Size = new Size(582, 361);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "COMPLETE LOS CAMPOS";
             groupBox1.Enter += groupBox1_Enter;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.png_clipart_computer_icons_button_login_image_file_formats_logo;
+            pictureBox1.Location = new Point(103, 54);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(123, 107);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(108, 304);
+            button2.Name = "button2";
+            button2.Size = new Size(161, 34);
+            button2.TabIndex = 5;
+            button2.Text = "CREAR USUARIO";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // button1
             // 
             button1.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(266, 160);
+            button1.Location = new Point(399, 265);
             button1.Name = "button1";
             button1.Size = new Size(97, 34);
             button1.TabIndex = 4;
@@ -80,7 +106,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(186, 118);
+            textBox2.Location = new Point(246, 223);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(250, 22);
             textBox2.TabIndex = 3;
@@ -88,7 +114,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(186, 66);
+            textBox1.Location = new Point(246, 171);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(250, 22);
             textBox1.TabIndex = 2;
@@ -98,7 +124,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(43, 121);
+            label3.Location = new Point(103, 226);
             label3.Name = "label3";
             label3.Size = new Size(123, 19);
             label3.TabIndex = 1;
@@ -109,23 +135,12 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(43, 69);
+            label2.Location = new Point(103, 174);
             label2.Name = "label2";
             label2.Size = new Size(80, 19);
             label2.TabIndex = 0;
             label2.Text = "NOMBRE";
             label2.Click += label2_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(43, 211);
-            button2.Name = "button2";
-            button2.Size = new Size(161, 34);
-            button2.TabIndex = 5;
-            button2.Text = "CREAR USUARIO";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // Form1
             // 
@@ -133,13 +148,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
-            Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -153,5 +167,6 @@
         private TextBox textBox1;
         private Label label3;
         private Button button2;
+        private PictureBox pictureBox1;
     }
 }

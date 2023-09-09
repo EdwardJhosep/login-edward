@@ -1,4 +1,6 @@
-﻿namespace login2
+﻿using System.Drawing;
+
+namespace login2
 {
     partial class Form1
     {
@@ -86,6 +88,7 @@
             this.button2.Text = "REGISTRARSE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.ForeColor = Color.Red;
             // 
             // button1
             // 

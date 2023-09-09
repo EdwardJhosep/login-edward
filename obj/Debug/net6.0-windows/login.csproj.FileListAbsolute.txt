@@ -17,3 +17,19 @@ C:\Users\Alumno\Documents\trabajos edward\login\obj\Debug\net6.0-windows\login.g
 C:\Users\Alumno\Documents\trabajos edward\login\obj\Debug\net6.0-windows\ref\login.dll
 C:\Users\Alumno\Documents\trabajos edward\login\obj\Debug\net6.0-windows\login.Form2.resources
 C:\Users\Alumno\Documents\trabajos edward\login\obj\Debug\net6.0-windows\login.Properties.Resources.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.Form1.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.Form2.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login2.Form1.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login2.Form2.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login2.Form3.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login2.Form4.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.login2.Properties.Resources.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.Properties.Resources.resources
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.csproj.GenerateResource.cache
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.AssemblyInfoInputs.cache
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.AssemblyInfo.cs
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.csproj.CoreCompileInputs.cache
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.dll
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\refint\login.dll
+C:\Users\juana\Desktop\login-edward\obj\Debug\net6.0-windows\login.pdb

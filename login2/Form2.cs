@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
-
-
 
 namespace login2
 {
@@ -18,8 +11,8 @@ namespace login2
         public Form2()
         {
             InitializeComponent();
-        }
 
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             // Crear una instancia del formulario RegisterForm.
@@ -78,10 +71,28 @@ namespace login2
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
-            //conectamos la base de datos 
         {
-            string connectionString = "Data Source=DESKTOP-7LDGQBD;Initial Catalog=login;Integrated Security=True";
+            string usuario = textBox1.Text;
+            string contraseña = textBox2.Text;
+            string correo = textBox3.Text;
+
+            // Verifica si los campos obligatorios están vacíos.
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña) || string.IsNullOrWhiteSpace(correo))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return; // No continúes si faltan campos obligatorios.
+            }
+
+            // Verifica si el campo "Correo" tiene un formato de correo electrónico válido.
+            if (!IsValidEmail(correo))
+            {
+                MessageBox.Show("Por favor, ingresa una dirección de correo electrónico válida.");
+                return; // No continúes si el correo no es válido.
+            }
+
+            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=login;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -95,36 +106,42 @@ namespace login2
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Define los parámetros de la consulta.
-                        command.Parameters.AddWithValue("@Usuario", textBox1.Text);
-                        command.Parameters.AddWithValue("@Contraseña", textBox2.Text);
-                        command.Parameters.AddWithValue("@Correo", textBox3.Text);
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Contraseña", contraseña);
+                        command.Parameters.AddWithValue("@Correo", correo);
 
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            // Crear una instancia de Form4 y mostrarla.
-                            Form4 form4 = new Form4();
-                            form4.Show();
+                            // Crear una instancia del formulario Form3.
+                            Form3 form3 = new Form3();
 
-                            //  ocultar el formulario actual (Form1) si lo deseas.
+                            // Mostrar el formulario Form3.
+                            form3.Show();
+
+                            // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("El registro ha fallado.");
+                            MessageBox.Show("El inicio de sesión ha fallado. Verifica tus credenciales.");
                         }
                     }
                 }
-                // indicación de que algo salió mal 
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, pattern);
+        }
+
+
     }
-
 }
-
 

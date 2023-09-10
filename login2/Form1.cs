@@ -68,9 +68,15 @@ namespace login2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //CONECTAR LA BASE DE DATOS 
+            // Verificar si los campos de usuario y contraseña están vacíos
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return; // Salir del método si los campos están vacíos
+            }
 
-            string connectionString = "Data Source=DESKTOP-7LDGQBD;Initial Catalog=login;Integrated Security=True";
+            // Conectar a la base de datos
+            string connectionString = "Data Source=EDWARDPC\\SQLEXPRESS;Initial Catalog=login;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -78,12 +84,12 @@ namespace login2
                 {
                     connection.Open();
 
-                    // Aquí puedes construir tu consulta SQL para verificar el inicio de sesión.
+                    // Construir la consulta SQL para verificar el inicio de sesión.
                     string query = "SELECT COUNT(*) FROM Usuario WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Define los parámetros de la consulta.
+                        // Definir los parámetros de la consulta.
                         command.Parameters.AddWithValue("@Usuario", textBox1.Text);
                         command.Parameters.AddWithValue("@Contraseña", textBox2.Text);
 
@@ -91,8 +97,6 @@ namespace login2
 
                         if (count > 0)
                         {
-                          
-
                             // Crear una instancia del formulario Form3.
                             Form3 form3 = new Form3();
 
@@ -101,16 +105,13 @@ namespace login2
 
                             // Opcionalmente, puedes ocultar el formulario actual (Form1) si lo deseas.
                             this.Hide();
-
                         }
-                        //CONDICIONES PARA CANDO NO SEAN LOS DATOS CORRECTOS 
                         else
                         {
                             MessageBox.Show("El inicio de sesión ha fallado. Verifica tus credenciales.");
                         }
                     }
                 }
-                // indicación de que algo salió mal 
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
